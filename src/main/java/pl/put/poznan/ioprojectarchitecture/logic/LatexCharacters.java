@@ -14,10 +14,17 @@ public class LatexCharacters {
 		this.text = text;
 	}
 
-	
-	
-	//TODO
+	private char[] latexSpecialCharacters = {'&', '$', '#', '_', '{', '}', '~', '*' };
+
 	public String changeToLatexFont() {
+		for(int i = 0; i < text.length(); i++) {
+			for(int j = 0; j < latexSpecialCharacters.length; j++) {
+				if(text.charAt(i) == latexSpecialCharacters[j] ) {
+					text = text.substring(0, i) + '\\' + text.substring(i, text.length());
+					i++;
+				}
+			}
+		}
 		return text;
 	}
 	
