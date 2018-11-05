@@ -17,7 +17,12 @@ public class NeighborRemover {
 	
 	//TODO
 	public String removeNeighbor() {
-		return text;
+		String[] arr = text.split(" ");
+		String result = "";
+		for ( int i = 0; i < arr.length - 1; i++) {
+			result += (arr[i].equals(arr[i + 1])) ? "": arr[i] + " ";
+		}
+		result += arr[arr.length - 1];
+		return result;
 	}
-	
 }

@@ -25,8 +25,7 @@ public class BasicTransforms {
 			return text.toLowerCase();
 		}
 		else if(typeOfTransform.equals("capitalize")) {
-			//Funckja do zrobienia
-			return "TODO";
+			return text.substring(0, 1).toUpperCase() + text.substring(1);
 		}
 		else {
 			return "Wrong type of transform";

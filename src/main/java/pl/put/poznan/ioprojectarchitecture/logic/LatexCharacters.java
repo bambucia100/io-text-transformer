@@ -4,11 +4,11 @@ public class LatexCharacters {
 
 	private boolean latexCharactersAllow;
 	private String text;
-	
+
 	public LatexCharacters() {
-		}
-	
-	
+	}
+
+
 	public LatexCharacters(boolean latexCharactersAllow, String text) {
 		this.latexCharactersAllow = latexCharactersAllow;
 		this.text = text;
@@ -27,5 +27,5 @@ public class LatexCharacters {
 		}
 		return text;
 	}
-	
+
 }
