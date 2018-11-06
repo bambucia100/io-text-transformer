@@ -19,10 +19,14 @@ public class NeighborRemover {
 	public String removeNeighbor() {
 		String[] arr = text.split(" ");
 		String result = "";
-		for ( int i = 0; i < arr.length - 1; i++) {
-			result += (arr[i].equals(arr[i + 1])) ? "": arr[i] + " ";
+		if(removeAllow) {
+			for ( int i = 0; i < arr.length - 1; i++) {
+				result += (arr[i].equals(arr[i + 1])) ? "": arr[i] + " ";
+			}
+			result += arr[arr.length - 1];
+			return result;
 		}
-		result += arr[arr.length - 1];
-		return result;
+		else
+			return text;
 	}
 }
