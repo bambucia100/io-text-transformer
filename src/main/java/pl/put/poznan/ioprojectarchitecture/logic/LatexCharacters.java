@@ -17,15 +17,19 @@ public class LatexCharacters {
 	private char[] latexSpecialCharacters = {'&', '$', '#', '_', '{', '}', '~', '*' };
 
 	public String changeToLatexFont() {
-		for(int i = 0; i < text.length(); i++) {
-			for(int j = 0; j < latexSpecialCharacters.length; j++) {
-				if(text.charAt(i) == latexSpecialCharacters[j] ) {
-					text = text.substring(0, i) + '\\' + text.substring(i, text.length());
-					i++;
+		if(latexCharactersAllow) {
+			for(int i = 0; i < text.length(); i++) {
+				for(int j = 0; j < latexSpecialCharacters.length; j++) {
+					if(text.charAt(i) == latexSpecialCharacters[j] ) {
+						text = text.substring(0, i) + '\\' + text.substring(i, text.length());
+						i++;
+					}
 				}
 			}
+			return text;
 		}
-		return text;
+		else
+			return text;
 	}
 
 }
