@@ -25,10 +25,10 @@ public class ShortcutsModifier {
 			String[] arr = text.split(" ");
 			for (String ss : arr) {
 				switch (ss) {
-					case "dr.":
+					case "dr":
 						result += "doktor ";
 						break;
-					case "Dr.":
+					case "Dr":
 						result += "Doktor ";
 						break;
 					case "prof.":
