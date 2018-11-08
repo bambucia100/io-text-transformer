@@ -7,6 +7,7 @@ import pl.put.poznan.ioprojectarchitecture.rest.TextTransformerClass;
 public class TextTransformer {
 
 	private TextTransformerClass transforms;
+	
     public TextTransformer(TextTransformerClass transforms){
         this.transforms = transforms;
  
@@ -29,8 +30,6 @@ public class TextTransformer {
 		
 		BasicTransforms basicTransforms = new BasicTransforms(transforms.getBasicTransform(), text);
 		text =  basicTransforms.transform();
-		Inverse inverse = new Inverse(transforms.isInverse(), text);
-		text = inverse.inversion();
 		NumbersExpander numbersModifier = new NumbersExpander(transforms.isNumbers(), text);
 		text = numbersModifier.numberExpander();
 		ShortcutsModifier shortcutsModifier = new ShortcutsModifier(transforms.getShortcuts(), text);
@@ -39,6 +38,8 @@ public class TextTransformer {
 		text = latexCharacters.changeToLatexFont();
 		NeighborRemover neighborRemover = new NeighborRemover(transforms.isNeighbors(), text);
 		text = neighborRemover.removeNeighbor();
+		Inverse inverse = new Inverse(transforms.isInverse(), text);
+		text = inverse.inversion();
 		
 		return text;
 	}
