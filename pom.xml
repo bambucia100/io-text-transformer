@@ -5,7 +5,7 @@
 
 	<groupId>pl.put.poznan</groupId>
 	<artifactId>io-project-architecture</artifactId>
-	<version>0.1</version>
+	<version>0.9</version>
 	<packaging>jar</packaging>
 
 	<name>io-project-architecture</name>
