@@ -24,12 +24,6 @@ public class TextTransformer {
     
 
 	public String transform(TextTransformerClass transforms, String text) {
-		
-		System.out.println("TextTransformer: " + text);
-		
-		
-		BasicTransforms basicTransforms = new BasicTransforms(transforms.getBasicTransform(), text);
-		text =  basicTransforms.transform();
 		NumbersExpander numbersModifier = new NumbersExpander(transforms.isNumbers(), text);
 		text = numbersModifier.numberExpander();
 		ShortcutsModifier shortcutsModifier = new ShortcutsModifier(transforms.getShortcuts(), text);
@@ -38,9 +32,12 @@ public class TextTransformer {
 		text = latexCharacters.changeToLatexFont();
 		NeighborRemover neighborRemover = new NeighborRemover(transforms.isNeighbors(), text);
 		text = neighborRemover.removeNeighbor();
+		BasicTransforms basicTransforms = new BasicTransforms(transforms.getBasicTransform(), text);
+		text =  basicTransforms.transform();
 		Inverse inverse = new Inverse(transforms.isInverse(), text);
 		text = inverse.inversion();
-		
+
+		System.out.println("Transformed Text: " + text);
 		return text;
 	}
     

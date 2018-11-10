@@ -1,3 +1,9 @@
 language: Java
 before_install:
  - chmod +x mvnw
+notifications:
+  email:
+    recipients:
+      - tomek199733@wp.pl
+    on_success: always
+    on_failure: always
