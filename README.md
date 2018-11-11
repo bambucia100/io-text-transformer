@@ -29,8 +29,9 @@ http://localhost:8081/<transformowany tekst>
 Dostępne wartości:
   Dla inverse, numbers, latex, neighbors: `true, false`;
   Dla basicTransform: `upper, lower, capitalize`;
-  Dla shortcut: `expand, compress`.
-7. Wysłanie zapytania przyciskiem *SEND*.
+  Dla shortcut: `expand, compress`,
+7. Wysłanie zapytania przyciskiem *SEND*,
+8. W zakładce *Response* pojawi się wynik zapytania.
 ## Autorzy:
 - Bartosz Żywicki
 - Tomasz Pucka
