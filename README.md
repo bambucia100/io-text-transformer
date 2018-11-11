@@ -1,7 +1,7 @@
 # Text Transformer
 Dla osób pracujących z danymi tekstowymi nasza aplikacja Text Transformer umożliwi transformacje danych tekstowych (np. zmiana wielkości liter, eliminacja duplikatów, itd.).
 ## Wymagania:
-- Wtyczka RESTClient w przeglądarce
+- Wtyczka RESTClient/Postman etc. w przeglądarce
 - Java IDE
 - Java Development Kit 1.8
 ## Instrukcja uruchomienia:
