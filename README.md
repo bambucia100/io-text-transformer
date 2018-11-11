@@ -8,10 +8,10 @@ Dla osób pracujących z danymi tekstowymi nasza aplikacja Text Transformer umo�
 1. Uruchomienie programu w Java IDE,
 2. Uruchomienie RESTClient w przeglądarce,
 3. Ustawienie metody *POST*,
-4. Dodanie nagłówka w RESTClient:
-    - Name: Content-Type
-    - Attribute Value: application/json
-5. Wpisanie adresu w polu URL:
+4. Dodanie *Header* w RESTClient:
+    - Name: `Content-Type`;
+    - Attribute Value: `application/json`.
+5. Wpisanie adresu w polu *URL*:
 ```
 http://localhost:8081/<transformowany tekst>
 ```
@@ -30,7 +30,7 @@ Dostępne wartości:
   Dla inverse, numbers, latex, neighbors: `true, false`;
   Dla basicTransform: `upper, lower, capitalize`;
   Dla shortcut: `expand, compress`.
-7. Wysłanie zapytania przyciskiem SEND.
+7. Wysłanie zapytania przyciskiem *SEND*.
 ## Autorzy:
 - Bartosz Żywicki
 - Tomasz Pucka
