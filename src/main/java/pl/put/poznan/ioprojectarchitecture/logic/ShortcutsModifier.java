@@ -14,14 +14,11 @@ public class ShortcutsModifier {
 	public ShortcutsModifier(String shortcutType, String text) {
 		this.shortcutType = shortcutType;
 		this.text = text;
-		System.out.println(shortcutType);
 	}
 	//TODO
 	public String modifyShortcuts() {
 		result = "";
-
-		//System.out.println(TextTransformerClass.getShortcuts());
-		//if (shortcutType.equals("expand")) {
+		if (shortcutType.equals("expand")) {
 			String[] arr = text.split(" ");
 			for (String ss : arr) {
 				switch (ss) {
@@ -54,7 +51,23 @@ public class ShortcutsModifier {
 				}
 
 			}
-		//}
-		return result;
+			return result;
+		}
+		else if(shortcutType.equals("compress")){
+			text = text.replaceAll("doktor","dr");
+			text = text.replaceAll("Doktor","Dr");
+			text = text.replaceAll("profesor","prof.");
+			text = text.replaceAll("Profesor","Prof.");
+			text = text.replaceAll("na przykład","np.");
+			text = text.replaceAll("Na przykład","Np.");
+			text = text.replaceAll("i tym podobne","itp.");
+			text = text.replaceAll("I tym podobne","Itp.");
+
+
+			return text;
+
+		}
+		else return text;
+
 	}
 }
