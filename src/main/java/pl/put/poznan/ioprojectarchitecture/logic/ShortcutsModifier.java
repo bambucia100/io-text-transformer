@@ -60,6 +60,30 @@ public class ShortcutsModifier {
 					case "Itp.":
 						result += "I tym podobne ";
 						break;
+                    case "inż.":
+                        result += "inżynier ";
+                        break;
+                    case "Inż.":
+                        result += "Inżynier ";
+                        break;
+                    case "br.":
+                        result += "bieżącego roku ";
+                        break;
+                    case "Br.":
+                        result += "Bieżącego roku ";
+                        break;
+                    case "nr":
+                        result += "numer ";
+                        break;
+                    case "Nr":
+                        result += "Numer ";
+                        break;
+                    case "mgr":
+                        result += "magister ";
+                        break;
+                    case "Mgr":
+                        result += "Magister ";
+                        break;
 					default:
 						result += ss + " ";
 				}
@@ -70,12 +94,27 @@ public class ShortcutsModifier {
 		else if(shortcutType.equals("compress")){
 			text = text.replaceAll("doktor","dr");
 			text = text.replaceAll("Doktor","Dr");
+
 			text = text.replaceAll("profesor","prof.");
 			text = text.replaceAll("Profesor","Prof.");
+
 			text = text.replaceAll("na przykład","np.");
 			text = text.replaceAll("Na przykład","Np.");
+
 			text = text.replaceAll("i tym podobne","itp.");
 			text = text.replaceAll("I tym podobne","Itp.");
+
+            text = text.replaceAll("inżynier","inż.");
+            text = text.replaceAll("Inżynier","Inż.");
+
+            text = text.replaceAll("bieżącego roku","br.");
+            text = text.replaceAll("Bieżącego roku","Br.");
+
+            text = text.replaceAll("numer","nr");
+            text = text.replaceAll("Numer","Nr");
+
+            text = text.replaceAll("mgr","magister");
+            text = text.replaceAll("Mgr","Magister");
 
 
 			return text;
