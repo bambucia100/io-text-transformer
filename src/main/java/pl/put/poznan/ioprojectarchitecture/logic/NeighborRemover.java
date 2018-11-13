@@ -4,14 +4,18 @@ public class NeighborRemover {
 
 	private boolean removeAllow;
 	private String text;
-	
+
+	/**
+	 * Class constructor
+	 */
 	public NeighborRemover() {
 	}
 
 	/**
+	 * Class constructor specifying type of transformation
 	 *
-	 * @param removeAllow - bool variable to select the transformation
-	 * @param text - text to tramsform
+	 * @param removeAllow 	bool variable to select the transformation
+	 * @param text 			text to tramsform
 	 */
 	public NeighborRemover(boolean removeAllow, String text) {
 		this.removeAllow = removeAllow;
@@ -20,8 +24,9 @@ public class NeighborRemover {
 
 
 	/**
+	 * Returns String "text" without multiple words next to each other
 	 *
-	 * @return String without multiple words
+	 * @return 		String without multiple words
 	 */
 	public String removeNeighbor() {
 		String[] arr = text.split(" ");

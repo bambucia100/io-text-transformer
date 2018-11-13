@@ -4,14 +4,18 @@ public class NumbersExpander {
 	
 	private boolean numberExpandAllow;
 	private String text;
-	
+
+	/**
+	 * Class constructor
+	 */
 	public NumbersExpander() {	
 	}
 
 	/**
+	 * Class constructor specifying type of transformation
 	 *
-	 * @param numberExpandAllow - bool variable to select the transformation
-	 * @param text - text to tramsform
+	 * @param numberExpandAllow 	bool variable to select the transformation
+	 * @param text 					text to tramsform
 	 */
 	public NumbersExpander(boolean numberExpandAllow, String text) {
 		this.numberExpandAllow = numberExpandAllow;
@@ -19,8 +23,9 @@ public class NumbersExpander {
 	}
 
 	/**
+	 * Returns String "text" with converted numbers into words
 	 *
-	 * @return numbers in words
+	 * @return 		numbers into words
 	 */
 	public String numberExpander() {
 		if(numberExpandAllow) {

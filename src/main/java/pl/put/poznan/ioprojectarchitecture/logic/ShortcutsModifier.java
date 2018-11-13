@@ -7,11 +7,15 @@ public class ShortcutsModifier {
 	private String shortcutType;
 	private String text;
 	private String result;
-	
+
+    /**
+     * Class constructor
+     */
 	public ShortcutsModifier() {	
 	}
 
     /**
+     * Class constructor specifying type of transformation
      *
      * @param shortcutType - String variable to select the transformation
      * @param text - - text to tramsform
@@ -22,8 +26,9 @@ public class ShortcutsModifier {
 	}
 
     /**
+     * Returns String "text" with modified shortcuts
      *
-     * @return the modified shortcut
+     * @return      the modified shortcut
      */
 	public String modifyShortcuts() {
 		result = "";
