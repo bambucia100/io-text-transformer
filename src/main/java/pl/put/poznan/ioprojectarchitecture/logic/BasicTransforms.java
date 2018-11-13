@@ -32,7 +32,7 @@ public class BasicTransforms {
 	
 	public BasicTransforms(String typeOfTransform, String text) {
 		this.typeOfTransform = typeOfTransform;
-		this.text = text;
+		this.text = text.trim().replaceAll(" +", " ");
 	}
 	public String transform() {
 
@@ -46,7 +46,7 @@ public class BasicTransforms {
 			return capitalize(text);
 		}
 		else {
-			return "Wrong type of transform";
+			return text;
 		}
 	}
 

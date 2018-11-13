@@ -16,14 +16,7 @@ public class Inverse {
 	}
 	
 	public String inv(String input) {
-        byte [] strAsByteArray = input.getBytes(); 
-  
-        byte [] result = new byte [strAsByteArray.length]; 
-
-        for (int i = 0; i<strAsByteArray.length; i++) 
-            result[i] = strAsByteArray[strAsByteArray.length-i-1]; 
-  
-        return new String(result); 
+        return new StringBuilder(text).reverse().toString();
 	}
 	
 	public String inversion() {
