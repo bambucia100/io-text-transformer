@@ -7,12 +7,21 @@ public class NumbersExpander {
 	
 	public NumbersExpander() {	
 	}
-	
+
+	/**
+	 *
+	 * @param numberExpandAllow - bool variable to select the transformation
+	 * @param text - text to tramsform
+	 */
 	public NumbersExpander(boolean numberExpandAllow, String text) {
 		this.numberExpandAllow = numberExpandAllow;
 		this.text = text;
 	}
-	
+
+	/**
+	 *
+	 * @return numbers in words
+	 */
 	public String numberExpander() {
 		if(numberExpandAllow) {
 			String[] arr = text.split(" ");

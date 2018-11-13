@@ -7,15 +7,22 @@ public class NeighborRemover {
 	
 	public NeighborRemover() {
 	}
-	
-	
+
+	/**
+	 *
+	 * @param removeAllow - bool variable to select the transformation
+	 * @param text - text to tramsform
+	 */
 	public NeighborRemover(boolean removeAllow, String text) {
 		this.removeAllow = removeAllow;
 		this.text = text;
 	}
-	
-	
-	//TODO
+
+
+	/**
+	 *
+	 * @return String without multiple words
+	 */
 	public String removeNeighbor() {
 		String[] arr = text.split(" ");
 		String result = "";

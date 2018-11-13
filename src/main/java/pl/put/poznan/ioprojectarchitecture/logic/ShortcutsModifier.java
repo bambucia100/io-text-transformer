@@ -10,12 +10,21 @@ public class ShortcutsModifier {
 	
 	public ShortcutsModifier() {	
 	}
-	
+
+    /**
+     *
+     * @param shortcutType - String variable to select the transformation
+     * @param text - - text to tramsform
+     */
 	public ShortcutsModifier(String shortcutType, String text) {
 		this.shortcutType = shortcutType;
 		this.text = text;
 	}
-	//TODO
+
+    /**
+     *
+     * @return the modified shortcut
+     */
 	public String modifyShortcuts() {
 		result = "";
 		if (shortcutType.equals("expand")) {
