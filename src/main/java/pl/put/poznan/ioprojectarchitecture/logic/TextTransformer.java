@@ -2,6 +2,7 @@ package pl.put.poznan.ioprojectarchitecture.logic;
 
 import java.util.Arrays;
 
+import pl.put.poznan.ioprojectarchitecture.logic.functionality.*;
 import pl.put.poznan.ioprojectarchitecture.rest.TextTransformerClass;
 
 public class TextTransformer {
@@ -34,6 +35,12 @@ public class TextTransformer {
 		text = neighborRemover.removeNeighbor();
 		BasicTransforms basicTransforms = new BasicTransforms(transforms.getBasicTransform(), text);
 		text =  basicTransforms.transform();
+		CommaAdder comma = new CommaAdder(transforms.isComma(), text);
+		text = comma.addComma();
+		Leetspeak leetspeak = new Leetspeak(transforms.isLeetspeak(), text);
+		text = leetspeak.make1337();
+		PolishLettersRemover polishLetters = new PolishLettersRemover(transforms.isPolishLetter(), text);
+		text = polishLetters.removePolishLetters();
 		Inverse inverse = new Inverse(transforms.isInverse(), text);
 		text = inverse.inversion();
 

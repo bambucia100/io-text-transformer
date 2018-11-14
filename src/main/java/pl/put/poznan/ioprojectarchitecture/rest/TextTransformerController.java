@@ -31,7 +31,7 @@ public class TextTransformerController {
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public String post(@PathVariable String text,
                       @RequestBody TextTransformerClass transforms){
-
+    	System.out.println("XD");
         // log the parameters
         logger.debug(text);
         System.out.println("textPost: " + text);

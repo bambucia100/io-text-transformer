@@ -9,13 +9,18 @@ public class TextTransformerClass {
 	private String shortcuts;
 	private boolean latex;
 	private boolean neighbors;
+	private boolean comma;
+	private boolean leetspeak;
+	private boolean polishLetter;
+	
 	
 	public TextTransformerClass() {
 		
 	}
 	
 	public TextTransformerClass(String basicTransform, boolean inverse, boolean numbers, 
-			String shortcuts, boolean latex, boolean neighbors) {
+			String shortcuts, boolean latex, boolean neighbors, 
+			boolean comma, boolean leetspeak, boolean polishLetter) {
 		super();
 		this.basicTransform = basicTransform;
 		this.inverse = inverse;
@@ -23,6 +28,9 @@ public class TextTransformerClass {
 		this.shortcuts = shortcuts;
 		this.latex = latex;
 		this.neighbors = neighbors;
+		this.comma = comma;
+		this.leetspeak = leetspeak;
+		this.polishLetter = polishLetter;
 	}
 	
 	public String getBasicTransform() {
@@ -73,7 +81,31 @@ public class TextTransformerClass {
 		this.neighbors = neighbors;
 	}
 
+	public boolean isComma() {
+		return comma;
+	}
 
+	public void setComma(boolean comma) {
+		this.comma = comma;
+	}
+
+	public boolean isLeetspeak() {
+		return leetspeak;
+	}
+
+	public void setLeetspeak(boolean leetspeak) {
+		this.leetspeak = leetspeak;
+	}
+
+	public boolean isPolishLetter() {
+		return polishLetter;
+	}
+
+	public void setPolishLetter(boolean polishLetter) {
+		this.polishLetter = polishLetter;
+	}
+
+	
 	
 	
 }
