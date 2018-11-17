@@ -1,6 +1,5 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
 
-import javafx.scene.text.Text;
 
 public class BasicTransforms {
 	
