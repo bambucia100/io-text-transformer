@@ -31,7 +31,8 @@ public class BasicTransforms {
 	
 	public BasicTransforms(String typeOfTransform, String text) {
 		this.typeOfTransform = typeOfTransform;
-		this.text = text.trim().replaceAll(" +", " ");
+		//this.text = text.trim().replaceAll(" +", " ");
+		this.text = text;
 	}
 	public String transform() {
 
