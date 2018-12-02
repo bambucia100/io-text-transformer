@@ -18,6 +18,7 @@ public class CommaAdder {
 	
 	//TODO Add functionality
 	public String addComma() {
+		/*
 		if(comma) {
 			String[] arr = text.split(" ");
 			char[] chars;
@@ -30,8 +31,18 @@ public class CommaAdder {
 			if(!Pattern.matches(".+\\.$", arr[arr.length-1]))
 			text +=  ".";
 			return text;
+		} else {*/
+		if(comma) {
+			String[] arr = text.split(" ");
+			char[] chars;
+			text = arr[0];
+			for(int i = 1; i < arr.length; i++)
+				if(arr[i].equals("że") || arr[i].equals("który") || arr[i].equals("aż") || arr[i].equals("więc") || arr[i].equals("lecz") || arr[i].equals("ponieważ") && !Pattern.matches(".+,$", arr[i-1]))
+					text +=  ", " + arr[i];
+				else
+					text +=  " " + arr[i];
+			return text;
 		} else {
-			
 			return text;
 		}
 		
