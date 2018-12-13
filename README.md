@@ -3,6 +3,9 @@ Dla osób pracujących z danymi tekstowymi nasza aplikacja Text Transformer umo�
 ## Wymagania:
 - Java IDE
 - Java Development Kit 1.8
+- Maven
+- Node.js
+- Maven oraz JDK w PATH
 ## Instrukcja uruchomienia:
 1. Wymagania wstępne:
 
@@ -19,6 +22,7 @@ npm install -g @vue/cli
 ```
 2. Uruchomienie w folderze głównym kolejno:
 ```
+mvn clean build
 mvn --projects backend spring-boot:run
 cd frontend
 npm run serve
