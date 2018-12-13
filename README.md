@@ -23,6 +23,7 @@ mvn --projects backend spring-boot:run
 cd frontend
 npm run serve
 ```
+3. Przejdź do adresu http://localhost:8080/ w przeglądarce.
 ## Autorzy:
 - Bartosz Żywicki
 - Tomasz Pucka
