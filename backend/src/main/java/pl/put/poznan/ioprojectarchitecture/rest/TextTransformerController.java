@@ -13,33 +13,27 @@ public class TextTransformerController {
 	private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public String get(@PathVariable String text,
-                              @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
-
-        // log the parameters
+    public String get(@PathVariable String text, @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
         logger.debug(text);
-        System.out.println("textGet: " + text);
         logger.debug(Arrays.toString(transforms));
-        System.out.println("transformsGet: " + transforms.toString());
-
-        // do the transformation, you should run your logic here, below just a silly example
-       // TextTransformer transformer = new TextTransformer(transforms);
-        //return transformer.transform(text);
-        return "XD";
+        return "{\n" +
+                "\"basicTransform\": \"none\",\n" +
+                "\"shortcuts\": \"none\",\n" +
+                "\"inverse\": true,\n" +
+                "\"numbers\": false,\n" +
+                "\"latex\": false,\n" +
+                "\"neighbors\": false,\n" +
+                "\"comma\": false,\n" +
+                "\"leetspeak\": false,\n" +
+                "\"polishLetter\": false\n" +
+                "}";
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
-                      @RequestBody TextTransformerClass transforms){
-    	System.out.println("XD");
-        // log the parameters
+    @RequestMapping(method = RequestMethod.POST)
+    public String post(@PathVariable String text, @RequestBody TextTransformerClass transforms){
         logger.debug(text);
-        System.out.println("textPost: " + text);
-        // do the transformation, you should run your logic here, below just a silly example
         TextTransformer transformer = new TextTransformer(transforms);
         text = transformer.transform(transforms, text);
-        
-        
         return text;
     }
 }
