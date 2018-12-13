@@ -1,5 +1,6 @@
 language: Java
 before_install:
+ - cd backend
  - chmod +x mvnw
 notifications:
   email:
