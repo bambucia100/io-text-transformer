@@ -17,7 +17,7 @@ npm install -g @vue/cli
 choco install npm
 npm install -g @vue/cli
 ```
-2. Uruchomienie kolejno:
+2. Uruchomienie w folderze głównym kolejno:
 ```
 mvn --projects backend spring-boot:run
 cd frontend
