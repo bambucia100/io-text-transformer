@@ -1,31 +1,30 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
 
-public class Inverse {
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
+
+public class Inverse extends TextTransformerDecorator {
 
 	private boolean inverseAllow;
-	private String text;
 
-	public Inverse() {
-		
-	}
 	
-	
-	public Inverse(boolean inverseAllow, String text) {
+	public Inverse(TextTransformer textToTransform, boolean inverseAllow) {
+		super(textToTransform);
+		this.descr = textToTransform.getText();
 		this.inverseAllow = inverseAllow;
-		this.text = text;
 	}
 	
 	public String inv(String input) {
-        return new StringBuilder(text).reverse().toString();
+        return new StringBuilder(input).reverse().toString();
 	}
-	
-	public String inversion() {
-		if(inverseAllow) {
-			return inv(text);
-		}
-		else {
-			return text;
-		}
+
+	@Override
+	public String transform() {
+		//System.out.println(inv(textToTransform.transform()) +"klas inv");
+		if(inverseAllow)
+			return inv(textToTransform.transform());//inv(text);
+		else
+			return textToTransform.transform();
 	}
 	
 }

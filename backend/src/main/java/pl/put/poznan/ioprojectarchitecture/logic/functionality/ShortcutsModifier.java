@@ -1,38 +1,37 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
 
 
-public class ShortcutsModifier {
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
+
+public class ShortcutsModifier extends TextTransformerDecorator {
 
 	private String shortcutType;
-	private String text;
 	private String result;
+	private String text;
 
     /**
      * Class constructor
      */
-	public ShortcutsModifier() {	
+	public ShortcutsModifier(TextTransformer textToTransform, String shortcutType) {
+		super(textToTransform);
+		this.descr = textToTransform.getText();
+		this.shortcutType = shortcutType;
 	}
 
-    /**
-     * Class constructor specifying type of transformation
-     *
-     * @param shortcutType - String variable to select the transformation
-     * @param text - - text to transform
-     */
-	public ShortcutsModifier(String shortcutType, String text) {
-		this.shortcutType = shortcutType;
-		this.text = text;
-	}
 
     /**
      * Returns String "text" with modified shortcuts
      *
      * @return      the modified shortcut
      */
-	public String modifyShortcuts() {
+	public String function(String s) {
+		//text = textToTransform.getText();
+		text = s;
 		result = "";
 		if (shortcutType.equals("expand")) {
-			String[] arr = text.split(" ");
+			//String[] arr = textToTransform.getText().split(" ");
+			String[] arr = s.split(" ");
 			for (String ss : arr) {
 				switch (ss) {
 					case "dr":
@@ -115,11 +114,17 @@ public class ShortcutsModifier {
             text = text.replaceAll("mgr","magister");
             text = text.replaceAll("Mgr","Magister");
 
-
 			return text;
 
 		}
 		else return text;
 
 	}
+
+	@Override
+	public String transform() {
+		return function(textToTransform.transform());
+	}
+
 }
+

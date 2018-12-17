@@ -1,7 +1,10 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
 
 
-public class BasicTransforms {
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
+
+public class BasicTransforms extends TextTransformerDecorator{
 	
 	
 	private String typeOfTransform;
@@ -27,26 +30,27 @@ public class BasicTransforms {
 		return result;
 	}
 
-	public BasicTransforms() {}
-	
-	public BasicTransforms(String typeOfTransform, String text) {
-		this.typeOfTransform = typeOfTransform;
-		//this.text = text.trim().replaceAll(" +", " ");
-		this.text = text;
-	}
-	public String transform() {
 
+	public BasicTransforms(TextTransformer textToTransform, String typeOfTransform) {
+		super(textToTransform);
+		this.descr = textToTransform.getText();
+		this.typeOfTransform = typeOfTransform;
+	}
+
+	@Override
+	public String transform() {
+		System.out.println("Basic");
 		if(typeOfTransform.equals("upper")) {
-			return text.toUpperCase();
+			return textToTransform.transform().toUpperCase();
 		}
 		else if(typeOfTransform.equals("lower")) {
-			return text.toLowerCase();
+			return textToTransform.transform().toLowerCase();
 		}
 		else if(typeOfTransform.equals("capitalize")) {
-			return capitalize(text);
+			return capitalize(textToTransform.transform());
 		}
 		else {
-			return text;
+			return textToTransform.transform();
 		}
 	}
 

@@ -1,26 +1,32 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
 
-public class NeighborRemover {
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
+
+public class NeighborRemover extends TextTransformerDecorator {
 
 	private boolean removeAllow;
-	private String text;
 
 	/**
 	 * Class constructor
 	 */
-	public NeighborRemover() {
+	public NeighborRemover(TextTransformer textToTransform, boolean removeAllow) {
+		super(textToTransform);
+		this.descr = textToTransform.getText();
+		this.removeAllow = removeAllow;
 	}
 
+	/*
 	/**
 	 * Class constructor specifying type of transformation
 	 *
 	 * @param removeAllow 	bool variable to select the transformation
 	 * @param text 			text to tramsform
-	 */
+	 *
 	public NeighborRemover(boolean removeAllow, String text) {
 		this.removeAllow = removeAllow;
 		this.text = text;
-	}
+	}*/
 
 
 	/**
@@ -28,8 +34,8 @@ public class NeighborRemover {
 	 *
 	 * @return 		String without multiple words
 	 */
-	public String removeNeighbor() {
-		String[] arr = text.split(" ");
+	public String function(String s) {
+		String[] arr = s.split(" ");//textToTransform.getText().split(" ");
 		String result = "";
 		if(removeAllow) {
 			for ( int i = 0; i < arr.length - 1; i++) {
@@ -39,6 +45,11 @@ public class NeighborRemover {
 			return result;
 		}
 		else
-			return text;
+			return s;
+	}
+
+	@Override
+	public String transform() {
+		return function(textToTransform.transform());
 	}
 }

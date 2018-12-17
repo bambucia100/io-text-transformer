@@ -1,29 +1,31 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
 
 
-public class PolishLettersRemover {
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
+
+public class PolishLettersRemover extends TextTransformerDecorator {
 
 	boolean polishLetter;
-	String text;
-	
-	public PolishLettersRemover() {
+	private String text;
 
+	public PolishLettersRemover(TextTransformer textToTransform, boolean polishLetter) {
+		super(textToTransform);
+		this.descr = textToTransform.getText();
+		this.polishLetter = polishLetter;
 	}
 	
-	public PolishLettersRemover(boolean polishLetter, String text) {
-		
-		this.polishLetter = polishLetter;
-		this.text = text;
-	}
+
 	
 	private static String[] letterArrayLower = {"a", "c", "e", "l", "n", "o", "s", "z", "z"};
 	private static String[] letterArrayUpper = {"A", "C", "E", "L", "N", "O", "S", "Z", "Z"};
 	private static String[] letterArrayPolishLower = {"ą", "ć", "ę", "ł", "ń", "ó", "ś", "ż", "ź"};
 	private static String[] letterArrayPolishUpper = {"Ą", "Ć", "Ę", "Ł", "Ń", "Ó", "Ś", "Ż", "Ź"};
-	
-	//TODO Add functionality
-	public String removePolishLetters() {
-		
+
+
+	public String function(String s) {
+
+		text = s;//textToTransform.getText();
 		if(polishLetter) {
 			for(int i = 0; i < 9; i++) {
 				
@@ -32,7 +34,12 @@ public class PolishLettersRemover {
 			}
 			return text;
 		} else {
-			return text;
+			return s;
 		}
+	}
+
+	@Override
+	public String transform() {
+		return function(textToTransform.transform());
 	}
 }

@@ -1,22 +1,29 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
 
-public class NumbersExpander {
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
+
+public class NumbersExpander extends TextTransformerDecorator {
 	
 	private boolean numberExpandAllow;
-	private String text;
 
 	/**
 	 * Class constructor
 	 */
-	public NumbersExpander() {	
+	public NumbersExpander(TextTransformer textToTransform, boolean numberExpandAllow) {
+		super(textToTransform);
+		this.descr = textToTransform.getText();
+		this.numberExpandAllow = numberExpandAllow;
+		System.out.println("numbersClass");
+		System.out.println(textToTransform.toString());
 	}
 
-	/**
+	/*
 	 * Class constructor specifying type of transformation
 	 *
 	 * @param numberExpandAllow 	bool variable to select the transformation
-	 * @param text 					text to tramsform
-	 */
+	 * @param text 					text to transform
+	 *
 	public NumbersExpander(boolean numberExpandAllow, String text) {
 		this.numberExpandAllow = numberExpandAllow;
 		this.text = text;
@@ -27,9 +34,9 @@ public class NumbersExpander {
 	 *
 	 * @return 		numbers into words
 	 */
-	public String numberExpander() {
+	public String function(String s) {
 		if(numberExpandAllow) {
-			String[] arr = text.split(" ", -1);
+			String[] arr = s.split(" ", -1);//textToTransform.getText().split(" ", -1);
 			char[] chars;
 			String result = "";
 			String number = "";
@@ -167,12 +174,15 @@ public class NumbersExpander {
 
 				number = "";
 			}
-			System.out.println(result);
 			return result;
 		} else {
-			System.out.println(text);
-			return text;
+			return s;
 		}
+	}
+
+
+	@Override
+	public String transform() {return function(textToTransform.transform());
 	}
 	
 }

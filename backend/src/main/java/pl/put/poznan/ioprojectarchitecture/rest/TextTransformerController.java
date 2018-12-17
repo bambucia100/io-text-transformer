@@ -3,7 +3,9 @@ package pl.put.poznan.ioprojectarchitecture.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import pl.put.poznan.ioprojectarchitecture.logic.TextClass;
 import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.functionality.*;
 
 import java.util.Arrays;
 
@@ -11,6 +13,7 @@ import java.util.Arrays;
 @RequestMapping("/{text}")
 public class TextTransformerController {
 	private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
+    TextTransformer startText;
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(@PathVariable String text, @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
@@ -32,8 +35,19 @@ public class TextTransformerController {
     @RequestMapping(method = RequestMethod.POST)
     public String post(@PathVariable String text, @RequestBody TextTransformerClass transforms){
         logger.debug(text);
-        TextTransformer transformer = new TextTransformer(transforms);
-        text = transformer.transform(transforms, text);
-        return text;
+        System.out.println("Controll");
+        System.out.println(text);
+        startText = new TextClass(text);
+        startText = new NumbersExpander(startText, transforms.isNumbers());
+        startText = new ShortcutsModifier(startText, transforms.getShortcuts());
+        startText = new LatexCharacters(startText, transforms.isLatex());
+        startText = new NeighborRemover(startText, transforms.isNeighbors());
+        startText = new BasicTransforms(startText, transforms.getBasicTransform());
+        startText = new CommaAdder(startText, transforms.isComma());
+        startText = new Leetspeak(startText, transforms.isLeetspeak());
+        startText = new PolishLettersRemover(startText, transforms.isPolishLetter());
+        startText = new Inverse(startText, transforms.isInverse());
+        System.out.println(startText.getText());
+        return  startText.transform();
     }
 }

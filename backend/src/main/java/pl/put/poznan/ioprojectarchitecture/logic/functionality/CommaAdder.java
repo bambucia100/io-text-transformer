@@ -1,23 +1,23 @@
 package pl.put.poznan.ioprojectarchitecture.logic.functionality;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
+import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
+
 import java.util.regex.*;
 
-public class CommaAdder {
+public class CommaAdder extends TextTransformerDecorator {
 
 	private boolean comma;
 	private String text;
 	
-	public CommaAdder() {
-		
-	}
-	
-	public CommaAdder(boolean comma, String text) {
-		
+
+	public CommaAdder(TextTransformer textToTransform, boolean comma) {
+		super(textToTransform);
+		this.descr = textToTransform.getText();
 		this.comma = comma;
-		this.text = text;
 	}
-	
-	//TODO Add functionality
-	public String addComma() {
+
+
+	public String function(String s) {
 		/*
 		if(comma) {
 			String[] arr = text.split(" ");
@@ -33,7 +33,7 @@ public class CommaAdder {
 			return text;
 		} else {*/
 		if(comma) {
-			String[] arr = text.split(" ");
+			String[] arr = s.split(" ");//textToTransform.getText().split(" ");
 			char[] chars;
 			text = arr[0];
 			for(int i = 1; i < arr.length; i++)
@@ -43,10 +43,14 @@ public class CommaAdder {
 					text +=  " " + arr[i];
 			return text;
 		} else {
-			return text;
+			return s;
 		}
 		
 		
+	}
+	@Override
+	public String transform() {
+		return function(textToTransform.transform());
 	}
 	
 }
