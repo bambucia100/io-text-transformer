@@ -16,17 +16,6 @@ public class NeighborRemover extends TextTransformerDecorator {
 		this.removeAllow = removeAllow;
 	}
 
-	/*
-	/**
-	 * Class constructor specifying type of transformation
-	 *
-	 * @param removeAllow 	bool variable to select the transformation
-	 * @param text 			text to tramsform
-	 *
-	public NeighborRemover(boolean removeAllow, String text) {
-		this.removeAllow = removeAllow;
-		this.text = text;
-	}*/
 
 
 	/**

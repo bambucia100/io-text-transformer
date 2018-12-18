@@ -35,8 +35,6 @@ public class TextTransformerController {
     @RequestMapping(method = RequestMethod.POST)
     public String post(@PathVariable String text, @RequestBody TextTransformerClass transforms){
         logger.debug(text);
-        System.out.println("Controll");
-        System.out.println(text);
         startText = new TextClass(text);
         startText = new NumbersExpander(startText, transforms.isNumbers());
         startText = new ShortcutsModifier(startText, transforms.getShortcuts());
@@ -47,7 +45,6 @@ public class TextTransformerController {
         startText = new Leetspeak(startText, transforms.isLeetspeak());
         startText = new PolishLettersRemover(startText, transforms.isPolishLetter());
         startText = new Inverse(startText, transforms.isInverse());
-        System.out.println(startText.getText());
-        return  startText.transform();
+        return startText.transform();
     }
 }

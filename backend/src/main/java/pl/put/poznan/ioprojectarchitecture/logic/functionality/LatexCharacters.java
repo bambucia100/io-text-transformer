@@ -28,12 +28,9 @@ public class LatexCharacters extends TextTransformerDecorator {
 					}
 				}
 			}
-			//descr = text;
-			//System.out.println(textToTransform.getText() + "pkt112");
 			return text;
 		}
 		else{
-			//System.out.println(textToTransform.getText() + "pkt111");
 			return s;}
 	}
 

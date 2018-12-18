@@ -10,9 +10,7 @@ public class Leetspeak extends TextTransformerDecorator {
 
 	public Leetspeak(TextTransformer textToTransform, boolean leetspeak) {
 			super(textToTransform);
-			System.out.println("before " + descr);
 			this.descr = textToTransform.getText();
-			System.out.println("after " + descr);
 			this.leetspeak = leetspeak;
 		}
 
@@ -20,12 +18,10 @@ public class Leetspeak extends TextTransformerDecorator {
 	private static String[] leet = {"4", "4", "8", "8", "3", "3", "9", "9", "1", "1", "0", "0", "5", "5", "7", "7", "2", "2"};
 
 	public String function(String s){
-		text = s;//textToTransform.getText();
+		text = s;
 			for(int i = 0; i < normal.length; i++)
 				text = text.replaceAll(normal[i], leet[i]);
 			//descr = text;
-			System.out.println(text + "text11");
-			System.out.println(descr + "descr11");
 			return text;
 	}
 

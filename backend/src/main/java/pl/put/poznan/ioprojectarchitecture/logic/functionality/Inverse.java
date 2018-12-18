@@ -20,7 +20,6 @@ public class Inverse extends TextTransformerDecorator {
 
 	@Override
 	public String transform() {
-		//System.out.println(inv(textToTransform.transform()) +"klas inv");
 		if(inverseAllow)
 			return inv(textToTransform.transform());//inv(text);
 		else

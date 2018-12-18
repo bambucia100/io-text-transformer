@@ -14,19 +14,6 @@ public class NumbersExpander extends TextTransformerDecorator {
 		super(textToTransform);
 		this.descr = textToTransform.getText();
 		this.numberExpandAllow = numberExpandAllow;
-		System.out.println("numbersClass");
-		System.out.println(textToTransform.toString());
-	}
-
-	/*
-	 * Class constructor specifying type of transformation
-	 *
-	 * @param numberExpandAllow 	bool variable to select the transformation
-	 * @param text 					text to transform
-	 *
-	public NumbersExpander(boolean numberExpandAllow, String text) {
-		this.numberExpandAllow = numberExpandAllow;
-		this.text = text;
 	}
 
 	/**

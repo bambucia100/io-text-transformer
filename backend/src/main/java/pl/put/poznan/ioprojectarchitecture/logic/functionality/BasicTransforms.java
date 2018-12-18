@@ -39,7 +39,6 @@ public class BasicTransforms extends TextTransformerDecorator{
 
 	@Override
 	public String transform() {
-		System.out.println("Basic");
 		if(typeOfTransform.equals("upper")) {
 			return textToTransform.transform().toUpperCase();
 		}

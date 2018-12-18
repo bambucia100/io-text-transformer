@@ -5,8 +5,6 @@ public abstract class TextTransformerDecorator extends TextTransformer {
 
     public TextTransformerDecorator(TextTransformer textToTransform) {
         this.textToTransform = textToTransform;
-        System.out.println(textToTransform.toString() + " decorator");
-        System.out.println(textToTransform.getText() + " tekst");
     }
 
     @Override
