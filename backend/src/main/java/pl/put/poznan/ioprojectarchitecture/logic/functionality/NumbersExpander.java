@@ -161,7 +161,7 @@ public class NumbersExpander extends TextTransformerDecorator {
 
 				number = "";
 			}
-			return result;
+			return result.substring(0, result.length()-1);
 		} else {
 			return s;
 		}

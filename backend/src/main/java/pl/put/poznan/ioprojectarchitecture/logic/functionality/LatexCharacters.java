@@ -20,10 +20,10 @@ public class LatexCharacters extends TextTransformerDecorator {
 	public String function(String s) {
 		if(latexCharactersAllow) {
 			text = s;//textToTransform.getText();
-			for(int i = 0; i < textToTransform.getText().length(); i++) {
+			for(int i = 0; i < text.length(); i++) {
 				for(int j = 0; j < latexSpecialCharacters.length; j++) {
 					if(text.charAt(i) == latexSpecialCharacters[j] ) {
-						text = text.substring(0, i) + '\\' + text.substring(i, text.length());
+						text = text.substring(0, i) + '\\' + text.substring(i);
 						i++;
 					}
 				}

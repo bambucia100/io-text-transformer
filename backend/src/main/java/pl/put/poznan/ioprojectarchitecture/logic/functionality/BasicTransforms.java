@@ -27,7 +27,7 @@ public class BasicTransforms extends TextTransformerDecorator{
 				continue;
 			}
 		}
-		return result;
+		return result.substring(0, result.length()-1);
 	}
 
 
