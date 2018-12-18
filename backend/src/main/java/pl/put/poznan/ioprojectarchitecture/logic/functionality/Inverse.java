@@ -5,16 +5,27 @@ import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
 
 public class Inverse extends TextTransformerDecorator {
 
+	/**
+	 * When variable is true do transform
+	 */
 	private boolean inverseAllow;
 
-	
+	/**
+	 * Class constructor
+	 */
 	public Inverse(TextTransformer textToTransform, boolean inverseAllow) {
 		super(textToTransform);
 		this.descr = textToTransform.getText();
 		this.inverseAllow = inverseAllow;
 	}
-	
-	public String inv(String input) {
+
+	/**
+	 *
+	 * @param input String you'd like to transform
+	 *
+	 * @return inverted input
+	 */
+	private String inv(String input) {
         return new StringBuilder(input).reverse().toString();
 	}
 

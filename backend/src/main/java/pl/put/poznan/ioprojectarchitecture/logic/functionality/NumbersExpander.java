@@ -4,7 +4,10 @@ import pl.put.poznan.ioprojectarchitecture.logic.TextTransformer;
 import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
 
 public class NumbersExpander extends TextTransformerDecorator {
-	
+
+	/**
+	 * When variable is true do transform
+	 */
 	private boolean numberExpandAllow;
 
 	/**

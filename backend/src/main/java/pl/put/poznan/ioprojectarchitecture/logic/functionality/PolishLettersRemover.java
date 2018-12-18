@@ -6,26 +6,47 @@ import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
 
 public class PolishLettersRemover extends TextTransformerDecorator {
 
-	boolean polishLetter;
-	private String text;
+	/**
+	 * When variable is true do transform
+	 */
+	private boolean polishLetter;
 
+	/**
+	 * Class constructor
+	 */
 	public PolishLettersRemover(TextTransformer textToTransform, boolean polishLetter) {
 		super(textToTransform);
 		this.descr = textToTransform.getText();
 		this.polishLetter = polishLetter;
 	}
-	
 
-	
+
+	/**
+	 * latin equivalent to lower polish letters
+	 */
 	private static String[] letterArrayLower = {"a", "c", "e", "l", "n", "o", "s", "z", "z"};
+	/**
+	 * latin equivalent to upper polish letters
+	 */
 	private static String[] letterArrayUpper = {"A", "C", "E", "L", "N", "O", "S", "Z", "Z"};
+	/**
+	 * dictionary of lower polish letters
+	 */
 	private static String[] letterArrayPolishLower = {"ą", "ć", "ę", "ł", "ń", "ó", "ś", "ż", "ź"};
+	/**
+	 * dictionary of upper polish letters
+	 */
 	private static String[] letterArrayPolishUpper = {"Ą", "Ć", "Ę", "Ł", "Ń", "Ó", "Ś", "Ż", "Ź"};
 
 
+	/**
+	 * Returns String "text" without polish letters
+	 *
+	 * @return 		text without polish letters
+	 */
 	public String function(String s) {
 
-		text = s;//textToTransform.getText();
+		String text = s;
 		if(polishLetter) {
 			for(int i = 0; i < 9; i++) {
 				

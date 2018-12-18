@@ -5,6 +5,10 @@ import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
 
 public class NeighborRemover extends TextTransformerDecorator {
 
+
+	/**
+	 * When variable is true do transform
+	 */
 	private boolean removeAllow;
 
 	/**

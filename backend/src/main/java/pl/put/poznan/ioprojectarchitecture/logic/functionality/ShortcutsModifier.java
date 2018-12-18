@@ -7,10 +7,8 @@ import pl.put.poznan.ioprojectarchitecture.logic.TextTransformerDecorator;
 public class ShortcutsModifier extends TextTransformerDecorator {
 
 	private String shortcutType;
-	private String result;
-	private String text;
 
-    /**
+	/**
      * Class constructor
      */
 	public ShortcutsModifier(TextTransformer textToTransform, String shortcutType) {
@@ -27,8 +25,8 @@ public class ShortcutsModifier extends TextTransformerDecorator {
      */
 	public String function(String s) {
 		//text = textToTransform.getText();
-		text = s;
-		result = "";
+		String text = s;
+		String result = "";
 		if (shortcutType.equals("expand")) {
 			//String[] arr = textToTransform.getText().split(" ");
 			String[] arr = s.split(" ");
