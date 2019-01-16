@@ -5,7 +5,8 @@ Dla osób pracujących z danymi tekstowymi nasza aplikacja Text Transformer umo�
 - Java Development Kit 1.8
 - Maven
 - Node.js
-- Maven oraz JDK w PATH
+- NPM
+- NPM, Maven oraz JDK w PATH
 ## Instrukcja uruchomienia:
 1. Wymagania wstępne:
 
@@ -17,7 +18,6 @@ npm install -g @vue/cli
 ```
 #### Windows
 ```
-choco install npm
 npm install -g @vue/cli
 ```
 2. Uruchomienie w folderze głównym kolejno:
