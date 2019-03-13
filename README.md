@@ -29,9 +29,9 @@ npm run serve
 ```
 3. Przejdź do adresu http://localhost:8080/ w przeglądarce.
 ## Autorzy:
-- Bartosz Żywicki
-- Tomasz Pucka
-- Marcin Rochowiak
+- Bartosz Żywicki (Spring Boot + logic)
+- Tomasz Pucka (frontend)
+- Marcin Rochowiak (logic)
 ## Inne:
 [Trello](https://trello.com/b/WtxDTkbB/text-transformer)
     
